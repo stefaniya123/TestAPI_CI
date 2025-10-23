@@ -37,7 +37,7 @@ def test_post_json(base_url, api_session):
     """Тест: POST с JSON-телом"""
     payload = {"message": "Hello", "flag": True, "count": 100}
     response = api_session.post(f"{base_url}/post", json=payload)
-    assert response.status_code == 200,  "Ждем код ответа сервера 200"
+    assert response.status_code == 204,  "Ждем код ответа сервера 200"
 
     data = response.json()
     assert data["json"] == payload
